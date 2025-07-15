@@ -6,7 +6,11 @@ import java.util.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
+
+import static com.learn.interviewrecruiter.MarkdownRender.renderMarkdown;
 
 public class HelloController {
     private List<String> questionList;
@@ -29,7 +33,7 @@ public class HelloController {
     @FXML
     private ScrollPane answerScrollPane;
     @FXML
-    private Label answerText;
+    private TextFlow answerText;
     @FXML
     private Label answerOutput;
     @FXML
@@ -101,7 +105,7 @@ public class HelloController {
             answerOutput.setText("");
         } else {
             questionText.setText("Вопросов больше нет");
-            answerText.setText("");
+            answerText.getChildren().clear();
         }
     }
 
@@ -163,12 +167,17 @@ public class HelloController {
         }
         if (isViewAnswerText) {
             viewAnswerBtn.setText("Скрыть ответ");
-            answerText.setText(answerList.get(currentIndex));
+            showMarkdownAnswer(answerList.get(currentIndex));
         } else {
             viewAnswerBtn.setText("Показать ответ");
-            answerText.setText("");
+            answerText.getChildren().clear();
         }
         isViewAnswerText = !isViewAnswerText;
 
+    }
+    public void showMarkdownAnswer(String mdContent) {
+        answerText.getChildren().clear();
+        TextFlow parsed = MarkdownRender.renderMarkdown(mdContent);
+        answerText.getChildren().addAll(parsed.getChildren());
     }
 }
