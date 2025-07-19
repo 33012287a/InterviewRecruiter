@@ -1,0 +1,61 @@
+.text-flow {
+    -fx-padding: 8px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.code-block {
+    -fx-background-color: #f4f4f4;
+    -fx-font-family: Consolas;
+    -fx-font-size: 14px;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+.list-item {
+    -fx-font-size: 16px;
+    -fx-padding: 0 0 0 10px;
+}
+
+.code-keyword {
+    -fx-fill: darkblue;
+    -fx-font-weight: bold;
+}
+
+.code-comment {
+    -fx-fill: gray;
+}
+
+.code-string {
+    -fx-fill: darkgreen;
+}
+
+.inline-code {
+    -fx-font-family: Consolas;
+    -fx-font-size: 16px;
+    -fx-background-color: #e0e0e0;
+    -fx-fill: #333;
+    -fx-padding: 2px;
+}
+.bold {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.italic {
+    -fx-font-style: italic;
+    -fx-font-size: 16px;
+}
+
+.markdown-header {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-fill: darkblue;
+}
+
+.markdown-text {
+    -fx-font-size: 16px;
+}
+
